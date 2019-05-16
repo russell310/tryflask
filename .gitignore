@@ -1,0 +1,8 @@
+.DS_Store
+*.pyc
+instance/
+migrations/
+venv/
+.env
+*.sqlite3
+.idea/
