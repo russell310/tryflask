@@ -11,7 +11,6 @@ from flask_sqlalchemy import SQLAlchemy
 from .settings import app_config, BASE_DIR
 
 db = SQLAlchemy()
-migrate = Migrate()
 login_manager = LoginManager()
 
 
@@ -27,8 +26,7 @@ def create_app(config_name):
     login_manager.init_app(app)
     login_manager.login_message = "You must be logged in to access this page."
     login_manager.login_view = "auth.login"
-    # Migrate(app, db)
-    migrate.init_app(app, db)
+    Migrate(app, db)
 
     # from app import models
 
